@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav,header,aside,section{
+    background-color: aqua;
+    border: 2px solid black;
+   
+}
+
+.page{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "nav head aside"
+    "nav main aside"
+    ;
+    grid-template-columns: 250px 1fr 450px;
+    grid-template-rows: 100px 1fr;
+}
+.navbar{
+    grid-area: nav;
+}
+.head{
+    grid-area: head;
+}
+.side{
+    grid-area: aside;
+}
+.main{
+    grid-area: main;
+}

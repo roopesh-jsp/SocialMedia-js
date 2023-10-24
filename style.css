@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,100;1,200;1,300;1,700&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:'poppins',Arial, Helvetica, sans-serif;
 }
-nav,header,aside,section{
-    background-color: aqua;
+header,aside,section{
+  
     border: 2px solid black;
 }
-
+nav{
+    border-right: 1px solid #c5c5c5;
+}
 .page{
     height: 100vh;
     display: grid;
@@ -29,4 +33,71 @@ nav,header,aside,section{
 }
 .main{
     grid-area: main;
+}
+
+
+/* navbar */
+i p{
+    display: inline;
+    padding: 20px;
+    font-weight: lighter;
+}
+.icon{
+    margin-bottom: 20px;
+    margin-right: 15px;
+   
+    transition: all .2s ease-in;
+    
+    
+}
+.icon p{
+    font-weight: 400;
+
+}
+.icon:hover{
+    background-color: #ebebeb;
+    transform: scale(1.1);
+}
+   
+
+i{
+    padding: 10px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+   padding-left: 20px;
+    flex-direction: column;
+    font-size: 20px;
+
+}
+.nav-logo{
+    position: relative;
+    top:20px;
+    right: 10px;
+}
+.nav-body {
+    display: flex;
+    flex-direction: column;
+}
+.nav-profile-pic{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid black;
+   position: relative;
+   right: 15px;
+   
+    margin:0 10px;
+}
+
+.nav-profile {
+    display: flex;
+    padding: 10px;
+    
+}
+
+.nav-foot{
+    display: flex;
+    flex-direction: column;
 }

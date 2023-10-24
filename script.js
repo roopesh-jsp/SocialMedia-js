@@ -64,8 +64,13 @@ arr.forEach(function(elem,idx){
 });
 const storiesContainer=document.querySelector(".stories");
 
-
+const storyView=document.querySelector(".story-view");
 storiesContainer.innerHTML=stories;
 storiesContainer.addEventListener("click",function(dets){
-    console.log(arr[dets.target.id].story);
+    storyView.style.display="flex";
+    storyView.innerHTML=` <img src="${arr[dets.target.id].story}" alt="">`
+
+    setTimeout(function(){
+        storyView.style.display="none";
+    },3000);    
 });

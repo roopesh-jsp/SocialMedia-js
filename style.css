@@ -144,7 +144,11 @@ i{
     background-size: cover;
    
 }
-
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .story-view{
     position: absolute;
@@ -157,6 +161,8 @@ i{
     align-items: center;
     justify-content: center;
     display: none;
+   
+    
 }
 .story-view img{
     

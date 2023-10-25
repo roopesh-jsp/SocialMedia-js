@@ -70,6 +70,8 @@ const storiesContainer=document.querySelector(".stories");
 
 const storyView=document.querySelector(".story-view");
 const storyViewImg=document.querySelector(".story-view img");
+
+
 storiesContainer.innerHTML=stories;
 storiesContainer.addEventListener("click",function(dets){
     currentindex=0;
@@ -78,10 +80,10 @@ storiesContainer.addEventListener("click",function(dets){
     {
         storyView.style.display="flex";
         storyViewImg.setAttribute('src',`${arr[dets.target.id].story}`);
-        setInterval(nxtstory,5000);
-        // setTimeout(function(){
-        // storyView.style.display="none";
-        // },10000);    
+        // setInterval(nxtstory,5000);   
+        setTimeout(function(){
+            storyView.style.display="none";
+        },3000);
     }  
 });
 
@@ -91,9 +93,11 @@ const closebtn=document.querySelector(".fa-xmark");
 
 closebtn.addEventListener('click',function(){
     storyView.style.display='none';
-})
+});
+
+
 function nxtstory(){
-    if(currentindex<=arr.length)
+    if(currentindex<arr.length)
     {
         currentindex+=1;
         storyView.style.display="flex";
@@ -109,7 +113,9 @@ function nxtstory(){
     {
         storyView.style.display="none";
     }
-}
+};
+
+
 
 rightarrow.addEventListener('click',function(){
     // if(currentindex<=arr.length)

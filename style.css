@@ -133,7 +133,7 @@ i{
     display: inline-block;
     margin-left: 20px;
     border-radius: 50%;
-    border: 3px solid rgb(224, 64, 94);
+    border: 5px double rgb(224, 64, 94);
     overflow: hidden;
     cursor: pointer;
     
@@ -160,9 +160,19 @@ i{
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
-   
-    
+    display: none;  
+}
+.story-view i{
+    color: #fff;
+    font-size: 30px;
+    padding: 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+.fa-xmark{
+    position: absolute;
+    top: 20px;
+    right: 30px;
 }
 .story-view img{
     

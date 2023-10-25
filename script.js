@@ -1,5 +1,9 @@
 "using strict";
 
+
+// stories.....
+
+
 var arr=[
     {
         logo:"https://images.unsplash.com/photo-1595882410987-ece12feabef2?auto=format&fit=crop&q=80&w=1964&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -56,7 +60,7 @@ var arr=[
 ]
 
 var stories='';
-
+let currentindex=0;
 arr.forEach(function(elem,idx){
     stories +=` <div class="story">
     <img id=${idx} src=${elem.logo} alt="">
@@ -65,12 +69,75 @@ arr.forEach(function(elem,idx){
 const storiesContainer=document.querySelector(".stories");
 
 const storyView=document.querySelector(".story-view");
+const storyViewImg=document.querySelector(".story-view img");
 storiesContainer.innerHTML=stories;
 storiesContainer.addEventListener("click",function(dets){
-    storyView.style.display="flex";
-    storyView.innerHTML=` <img src="${arr[dets.target.id].story}" alt="">`
-
-    setTimeout(function(){
-        storyView.style.display="none";
-    },3000);    
+    currentindex=0;
+    currentindex=Number(dets.target.id);
+    if(dets.target.id)
+    {
+        storyView.style.display="flex";
+        storyViewImg.setAttribute('src',`${arr[dets.target.id].story}`);
+        setInterval(nxtstory,5000);
+        // setTimeout(function(){
+        // storyView.style.display="none";
+        // },10000);    
+    }  
 });
+
+const leftarrow=document.querySelector(".fa-chevron-left");
+const rightarrow=document.querySelector(".fa-chevron-right");
+const closebtn=document.querySelector(".fa-xmark");
+
+closebtn.addEventListener('click',function(){
+    storyView.style.display='none';
+})
+function nxtstory(){
+    if(currentindex<=arr.length)
+    {
+        currentindex+=1;
+        storyView.style.display="flex";
+        storyViewImg.setAttribute('src',arr[currentindex].story);
+    }
+    else if(currentindex>=0)
+    {
+        currentindex-=1;
+        storyView.style.display="flex";
+        storyViewImg.setAttribute('src',arr[currentindex].story);
+    }
+    else if(!currentindex)
+    {
+        storyView.style.display="none";
+    }
+}
+
+rightarrow.addEventListener('click',function(){
+    // if(currentindex<=arr.length)
+    // {
+    //     currentindex+=1;
+    //     storyView.style.display="flex";
+    //     storyViewImg.setAttribute('src',arr[currentindex].story);
+    // }
+    nxtstory();
+});
+leftarrow.addEventListener('click',() =>{
+    // if(currentindex>=0)
+    // {
+    //     currentindex-=1;
+    //     storyView.style.display="flex";
+    //     storyViewImg.setAttribute('src',arr[currentindex].story);
+    // }
+    // if(!currentindex)
+    // {
+    //     storyView.style.display="none";
+    // }
+    nxtstory();
+});
+
+
+// xxx--xxx//
+
+
+// main-content......
+
+

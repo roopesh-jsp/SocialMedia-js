@@ -74,11 +74,12 @@ const storyViewImg=document.querySelector(".story-view img");
 
 storiesContainer.innerHTML=stories;
 storiesContainer.addEventListener("click",function(dets){
-    mainbody.style.display="none";
+    
     currentindex=0;
     currentindex=Number(dets.target.id);
     if(dets.target.id)
     {
+        mainbody.style.display="none";
         storyView.style.display="flex";
         storyViewImg.setAttribute('src',`${arr[dets.target.id].story}`);
        let interval= setInterval(nxtstory,5000);
@@ -308,22 +309,22 @@ fill(bookmark);
 let arr3=[
     {
         img:"https://plus.unsplash.com/premium_photo-1669814666084-36dbf86ab6cd?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3OHx8fGVufDB8fHx8fA%3D%3D",
-        name:"Bill",
+        name:"steve sinran",
         followers:"steve,max",
     },
     {
         img:"https://images.unsplash.com/photo-1697637601495-ecf5e16da56f?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3N3x8fGVufDB8fHx8fA%3D%3D",
-        name:"Alexander",
+        name:"Alexander_k",
         followers:"steve,max",
     },
     {
         img:"https://plus.unsplash.com/premium_photo-1674086619163-54bd6379f538?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5M3x8fGVufDB8fHx8fA%3D%3D",
-        name:"Nathaniel",
+        name:"Nathaniell",
         followers:"steve,max",
     },
     {
         img:"https://images.unsplash.com/photo-1682687981603-ae874bf432f2?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMDF8fHxlbnwwfHx8fHw%3D",
-        name:"Kingston",
+        name:"Kingstons",
         followers:"steve,max",
     }
   
@@ -345,3 +346,17 @@ arr3.forEach(function(elem){
 
 let sidebody=document.querySelector(".dynamic");
 sidebody.innerHTML=seidecont;
+
+
+// xx--xxx 
+
+// mediaquries
+
+let navadjust = window.matchMedia("(max-width:900px)");
+if(navadjust.matches)
+{
+   
+}
+
+
+

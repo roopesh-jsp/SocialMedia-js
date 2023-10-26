@@ -4,7 +4,11 @@
     margin: 0;
     box-sizing: border-box;
     font-family:'poppins',Arial, Helvetica, sans-serif;
+  
     
+}
+*::-webkit-scrollbar{
+    display: none;
 }
 /* aside{
   
@@ -12,15 +16,17 @@
 } */
 nav{
     border-right: 1px solid #c5c5c5;
+   
 }
 .page{
     height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-areas: 
     "nav head aside"
     "nav main aside"
     ;
-    grid-template-columns: 250px 860px 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 200px 1fr;
 }
 .navbar{
@@ -121,12 +127,16 @@ i{
 
 .stories{
     position: relative;
-    left:50px;
-    padding: 50px;
+    left:90px;
+    bottom: 30PX;
+    padding: 10px 50px 0px 0px;
+  
     padding-top: 70px;
     white-space: nowrap;
     overflow-x: scroll;
     width: 700px;
+    height: 100%;
+   
     
 }
 .stories::-webkit-scrollbar{
@@ -142,6 +152,10 @@ i{
     overflow: hidden;
     cursor: pointer;
     
+}
+.story:first-child{
+   
+    margin-left:0px ;
 }
 .story, img{
    width: 80px;
@@ -159,13 +173,14 @@ i{
     position: absolute;
     top:0;
     right: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     display: none;  
+    z-index: 100;
 }
 .story-view i{
     color: #fff;
@@ -188,6 +203,14 @@ i{
 
 /* main-content posts */
 
+.main{
+    position: relative;
+    bottom: 30PX;
+    height: 100%;
+    overflow-x: hidden;
+   
+    
+}
 .card{
     width:420px;
     display: flex;
@@ -255,15 +278,25 @@ i{
     width: 100%;
     padding: 5px 10px;
 }
-.card-head .name .nav-profile-pic {
-    transform: scale(1.2);  
+.card .nav-profile-pic{
+    background-position: center;
+    background-size: cover;
 }
 
 
 
 
 /* side bar */
-
+.side{
+    right: 100px;
+    position: relative;
+}
+.sidecont{
+    
+    height: 100%;
+    overflow-x: hidden;
+   
+}
 .static{
     display: flex;
     justify-content: space-between;
@@ -308,8 +341,7 @@ i{
 }
 .bill{
     position: relative;
-    right: 10px;
-    top:10px;
+   top:10px;
 }
 .dynamic{
 
@@ -317,4 +349,59 @@ i{
 }
 .xusers .pic{
     transform: scale(0.8);
+}
+
+
+/* 
+responsive */
+
+@media(max-width:1400px){
+    .page{
+        grid-template-areas: 
+        "nav head "
+        "nav main"
+        ;
+        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1fr 5fr;
+    }
+    .side{
+        display: none;
+    }
+    .stories{
+        left:0px;
+        margin:0 auto;
+        
+    }
+}
+
+@media(max-width:1100px){
+    .stories{
+        width:500px;
+    }
+}
+
+@media(max-width:900px){
+   .nav-body  p,.nav-logo,.nav-foot p{
+    display: none;
+   }
+   .navbar{
+    align-items: center;
+   }
+   .nav-profile-pic{
+    right: 0;
+   }
+  .nav-body{
+    position: relative;
+    align-items: center;
+    top: 70px;
+  }
+  .nav-body i{
+    font-size: 25px;
+  }
+  .stories{
+    width:300px;
+}
+.card {
+    transform: scale(0.8);
+}
 }
